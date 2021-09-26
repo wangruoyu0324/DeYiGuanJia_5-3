@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+     <resources>
+    <color name="colorPrimary">#4086f7</color>
+    <color name="colorPrimaryDark">#4086f7</color>
+    <color name="colorAccent">#4086f7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="color_divider">#FF4081</color>
+    <color name="blue">#2F98E9</color>
+    <color name="color_tabhost_h">#4086f7</color>
+    <color name="black_title">#444444</color>
+    - <!-- 底部导航选中颜色
+  -->
+    <color name="color_tabhost_l">#737373</color>
+    - <!-- 底部导航取消选中颜色
+  -->
+    <color name="color_divider_tabhost">#cccccc</color>
+    <color name="actionBarColor">#f5f5f5</color>
+    - <!-- 系统整体背景颜色
+  -->
+    <color name="search_background">#f6f6f6</color>
+    - <!-- 首页搜索框背景颜色
+  -->
+    <color name="search_text">#5e5b5b</color>
+    - <!-- 首页搜索框内字体颜色
+  -->
+    <color name="gray_text">#888888</color>
+    <color name="choose_house_type">#f1f1f1</color>
+    - <!-- 选择房型背景颜色
+  -->
+    <color name="shape_line">#cccccc</color>
+    - <!-- 自定义外框颜色
+  -->
+    <color name="choosecity_text">#353535</color>
+    - <!-- 选择城市字体颜色
+  -->
+    <color name="calculator_text">#333333</color>
+    <color name="dividercolor">#e5e5e5</color>
+    <color name="mask_color">#55000000</color>
+    - <!-- 半透明遮罩颜色
+  -->
+    <color name="mask_color2">#88000000</color>
+    - <!-- 半透明遮罩颜色
+  -->
+    <color name="textcolor1">#484848</color>
+    <color name="textcolor2">#868686</color>
+    <color name="textcolor3">#2d2d2d</color>
+    <color name="textcolor_red">#e35d72</color>
+    <color name="orange">#ff8002</color>
+    <color name="yellow">#e0e30c</color>
+    <color name="red">#e60101</color>
+    <color name="green">#34a829</color>
+    <color name="blue2">#f4f9ff</color>
+    <color name="transparent">#00000000</color>
+    <color name="black_textview">#2A2A2A</color>
+    <color name="black_textview2">#666666</color>
+    <color name="black_textview3">#999999</color>
+    <color name="red_textview">#DB6064</color>
+    <color name="red_textview2">#DA5C61</color>
+</resources>

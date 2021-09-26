@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_111_5"
+            android:src="@drawable/bg_scan_top" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_68_5"
+            android:text="刷脸登录"
+            android:textColor="#222222"
+            android:textSize="@dimen/dp_25_5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8_5"
+            android:layout_marginBottom="@dimen/dp_45"
+            android:text="请站在轮廓内正对摄像头"
+            android:textColor="#999999"
+            android:textSize="@dimen/dp_19_5" />
+
+        <FrameLayout
+            android:layout_width="@dimen/dp_212"
+            android:layout_height="@dimen/dp_212"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_face">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_97_5"
+                android:layout_marginTop="@dimen/dp_74"
+                android:src="@drawable/bg_face_blue" />
+
+            <SurfaceView
+                android:id="@+id/single_face_surfaceview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+
+
+            <com.chuxinbuer.deyiguanjia.face.FaceOverlayView
+                android:id="@+id/overlay_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/mLayout_BottomTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_17"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_10_5"
+                android:layout_height="@dimen/dp_10_5"
+                android:layout_marginRight="@dimen/dp_4_5"
+                android:src="@drawable/ic_faceidentify" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请按照提示，进行人脸识别登陆"
+                android:textColor="#999999"
+                android:textSize="@dimen/dp_8_5" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/mLayout_Info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/mLayout_Back"
+                android:layout_width="@dimen/dp_85_5"
+                android:layout_height="@dimen/dp_43"
+                android:background="@drawable/bg_back"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_15"
+                    android:layout_height="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_3"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="返回"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_14" />
+            </LinearLayout>
+
+
+            <com.chuxinbuer.deyiguanjia.widget.CountDownButton
+                android:id="@+id/mRemainTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="倒计时：0S"
+                android:textColor="#057CD3"
+                android:textSize="@dimen/dp_14" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

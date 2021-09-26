@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">德益管家</string>
+    <string name="hint_phone">输入想要查询的手机号</string>
+    <string name="submit">提交</string>
+    <string name="login">登录</string>
+    <string name="tip_extiapp">再按一次退出程序</string>
+
+    <string name="about_msg">
+Serial Port API sample v1.1\n
+\n
+This program is the sample application provided with project android-serialport-api.\n
+\n
+More information and bug report on [http://code.google.com/p/android-serialport-api]\n
+\n
+Copyright 2010-2011 Cedric Priscal\n
+\n
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at\n
+\n
+http://www.apache.org/licenses/LICENSE-2.0\n
+\n
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.\n
+	</string>
+    <string name="error_configuration">Please configure your serial port first.</string>
+    <string name="error_security">You do not have read/write permission to the serial
+		port.</string>
+    <string name="error_unknown">The serial port can not be opened for an unknown
+		reason.</string>
+    <string name="step1">进入微信公众号\n“中分环境”</string>
+    <string name="tip_deduction_integral">请出示二维码至扫码枪前\n用积分完成抵扣</string>
+</resources>
