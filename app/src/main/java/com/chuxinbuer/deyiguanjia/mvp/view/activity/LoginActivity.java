@@ -107,13 +107,13 @@ public class LoginActivity extends BaseActivity implements IBaseView {
             e.printStackTrace();
         }
         Map<String, String> map = new HashMap<>();
-        map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         map.put("type", "1");
         map.put("start", AppConfigManager.getInitedAppConfig().getLast_requesttime());
         new HttpsPresenter(this, this).request(map, Constant.FACELIST, "facelist", false);
 
         Map<String, String> map2= new HashMap<>();
-        map2.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         map2.put("type", "2");
         map2.put("start", AppConfigManager.getInitedAppConfig().getLast_requesttime_manager());
         new HttpsPresenter(this, this).request(map2, Constant.FACELIST, "facelist_manager", false);
@@ -762,12 +762,12 @@ public class LoginActivity extends BaseActivity implements IBaseView {
         if (!netType.name().equals(NetType.NONE)) {
             Map<String, String> map2 = new HashMap<>();
             map2.put("group", "5");
-            map2.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
             new HttpsPresenter(this, this).request(map2, Constant.UPDATE_APK, false);
 
 
             Map<String, String> map = new HashMap<>();
-            map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
             new HttpsPresenter(this, this).request(map, Constant.GETCONFATTR, false);
         }
     }

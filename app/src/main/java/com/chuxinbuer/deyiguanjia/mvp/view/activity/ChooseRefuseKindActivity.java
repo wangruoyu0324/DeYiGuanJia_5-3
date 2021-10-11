@@ -572,7 +572,7 @@ public class ChooseRefuseKindActivity extends BaseActivity implements IBaseView 
         map.put("w5", SPUtil.getInstance().getFloat(Constant.WEIGHT_SULIAO) + "");
 
         map.put("token", AppConfigManager.getInitedAppConfig().getToken());
-        map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         new HttpsPresenter(ChooseRefuseKindActivity.this, ChooseRefuseKindActivity.this).request(map, Constant.POST_REFUSE_SETTLEMENT, false);
     }
 
@@ -593,7 +593,7 @@ public class ChooseRefuseKindActivity extends BaseActivity implements IBaseView 
         }
         map.put("k", (int) curWeight + "");
         map.put("token", AppConfigManager.getInitedAppConfig().getToken());
-        map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         new HttpsPresenter(ChooseRefuseKindActivity.this, ChooseRefuseKindActivity.this).request(map, Constant.ADDJUNKLOG, false);
     }
 
@@ -613,7 +613,7 @@ public class ChooseRefuseKindActivity extends BaseActivity implements IBaseView 
             map.put("cid", "5");
         }
         map.put("token", AppConfigManager.getInitedAppConfig().getToken());
-        map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         new HttpsPresenter(ChooseRefuseKindActivity.this, ChooseRefuseKindActivity.this).request(map, Constant.FULLNOTICE, false);
     }
 }

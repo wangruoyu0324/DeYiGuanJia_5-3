@@ -216,7 +216,7 @@ public class ImageVideoFragment extends Fragment implements IBaseView {
                     }
 
                     Map<String, String> map = new HashMap<>();
-                    map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
                     new HttpsPresenter(ImageVideoFragment.this, (PlayBannerActivity) getActivity()).request(map, Constant.GETCONFATTR, false);
                 }
             });

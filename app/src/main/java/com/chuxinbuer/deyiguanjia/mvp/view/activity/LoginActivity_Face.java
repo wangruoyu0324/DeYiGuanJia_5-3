@@ -163,7 +163,7 @@ public class LoginActivity_Face extends BaseActivity implements ViewTreeObserver
             }
         }
         Map<String, String> map = new HashMap<>();
-        map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         map.put("type", "1");
         map.put("start", AppConfigManager.getInitedAppConfig().getLast_requesttime());
         new HttpsPresenter(LoginActivity_Face.this, LoginActivity_Face.this).request(map, Constant.FACELIST);

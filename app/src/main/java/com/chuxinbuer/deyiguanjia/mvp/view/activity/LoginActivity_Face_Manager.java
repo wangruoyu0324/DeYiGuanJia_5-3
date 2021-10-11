@@ -165,7 +165,7 @@ public class LoginActivity_Face_Manager extends BaseActivity implements ViewTree
             }
         }
         Map<String, String> map = new HashMap<>();
-        map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
         map.put("type", "2");
         map.put("start", AppConfigManager.getInitedAppConfig().getLast_requesttime_manager());
         new HttpsPresenter(LoginActivity_Face_Manager.this, LoginActivity_Face_Manager.this).request(map, Constant.FACELIST);

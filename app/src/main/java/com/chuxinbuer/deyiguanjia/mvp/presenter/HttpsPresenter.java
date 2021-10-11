@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 
 import com.alibaba.fastjson.JSON;
 import com.chuxinbuer.deyiguanjia.config.Constant;
+import com.chuxinbuer.deyiguanjia.database.AppConfigManager;
 import com.chuxinbuer.deyiguanjia.http.Api.ApiUtils;
 import com.chuxinbuer.deyiguanjia.http.call.FileUploadObserver;
 import com.chuxinbuer.deyiguanjia.http.call.UploadFileRequestBody;
@@ -125,6 +126,7 @@ public class HttpsPresenter extends BasePresenter<IBaseView, RxAppCompatActivity
          */
 
         LogUtils.e("mParams=" + JSON.toJSONString(model));
+        model.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
         HttpRxObservable.getObservable(ApiUtils.getUserApi().postRequest(url, model), getActivity(), ActivityEvent.PAUSE, tag).subscribe(httpRxObserver);
         mLoadingDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override

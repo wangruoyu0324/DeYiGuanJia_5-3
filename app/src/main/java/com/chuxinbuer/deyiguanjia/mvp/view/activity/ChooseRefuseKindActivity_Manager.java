@@ -251,7 +251,7 @@ public class ChooseRefuseKindActivity_Manager extends BaseActivity implements IB
                                 registerSendRepeat("", false);
                                 Map<String, String> map = new HashMap<>();
                                 map.put("token", AppConfigManager.getInitedAppConfig().getToken());
-                                map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
                                 //"垃圾箱类别 'c1'=>'纺织物','c2'=>'玻璃','c3'=>'纸张','c4'=>'金属',
                                 // 'c5'=>'塑料','c6'=>'厨余1'，,'c61'=>'厨余2,'c7'=>'有毒害','c8'=>'其他1' 'c81'=>'其他2'"
 

@@ -1,7 +1,9 @@
 package com.chuxinbuer.deyiguanjia.mvp.view.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -11,6 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
+import com.baidu.tts.client.SpeechSynthesizer;
+import com.baidu.tts.client.TtsMode;
 import com.chuxinbuer.deyiguanjia.R;
 import com.chuxinbuer.deyiguanjia.base.BaseActivity;
 import com.chuxinbuer.deyiguanjia.config.Constant;
@@ -100,6 +104,9 @@ public class OpenRefuseBoxActivity extends BaseActivity implements IBaseView {
 
     private long time = 0;
 
+    private SpeechSynthesizer mSpeechSynthesizer;
+    private AudioManager mAudioManager;
+
     @Override
     protected int getContentViewId() {
         return R.layout.activity_open_refusebox;
@@ -107,6 +114,8 @@ public class OpenRefuseBoxActivity extends BaseActivity implements IBaseView {
 
     @Override
     protected void init() {
+        mAudioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+
         time = System.currentTimeMillis() / 1000;//当前秒数
         SPUtil.getInstance().put(Constant.LASTTIME, time);
         mRemainTime.setLength(120 * 1000);
@@ -151,7 +160,7 @@ public class OpenRefuseBoxActivity extends BaseActivity implements IBaseView {
                         if (AppConfigManager.getInitedAppConfig().isIs_manager()) {//管理员关门后请求后台通知更换垃圾桶
                             Map<String, String> map = new HashMap<>();
                             map.put("token", AppConfigManager.getInitedAppConfig().getToken());
-                            map.put("deviceno", AppConfigManager.getInitedAppConfig().getDevice_token());
+
                             //"垃圾箱类别 'c1'=>'纺织物','c2'=>'玻璃','c3'=>'纸张','c4'=>'金属',
                             // 'c5'=>'塑料','c6'=>'厨余1'，,'c61'=>'厨余2,'c7'=>'有毒害','c8'=>'其他1' 'c81'=>'其他2'"
                             if (AppConfigManager.getInitedAppConfig().getRefuse_type() == Constant.REFUSEKIND_ZHIZHANG1) {
@@ -197,7 +206,14 @@ public class OpenRefuseBoxActivity extends BaseActivity implements IBaseView {
                     }
                 } else {
                     if (!AppConfigManager.getInitedAppConfig().isIs_opendoor()) { //开门以后称重，保存当前垃圾箱总重量
-
+                        int max = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+                        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int) (max * AppConfigManager.getInitedAppConfig().getVoice_breadcost()), 0);
+                        // 1. 获取实例
+                        if (mSpeechSynthesizer == null) {
+                            ToastUtil.showShort("[ERROR], 初始化失败");
+                        } else {
+                            mSpeechSynthesizer.speak("仓门已打开，请按正确分类投放");
+                        }
                         try {
                             AppConfigManager.getInitedAppConfig().updatePrefer(AppConfigPB.IS_OPENDOOR, true);
                         } catch (Exception e) {
@@ -335,6 +351,29 @@ public class OpenRefuseBoxActivity extends BaseActivity implements IBaseView {
 
     @Override
     protected void initBundleData() {
+        if (mSpeechSynthesizer == null)
+            mSpeechSynthesizer = SpeechSynthesizer.getInstance();
+        mSpeechSynthesizer.setContext(OpenRefuseBoxActivity.this);
+
+        // 3. 设置appId，appKey.secretKey
+        mSpeechSynthesizer.setAppId("24256045");
+        mSpeechSynthesizer.setApiKey("dT0LLGVWgzEYApGLAzyGKwtC", "2L4h3ZFSZpBIZnXEDxl5kOwsoNZbWFLo");
+
+// 5. 以下setParam 参数选填。不填写则默认值生效
+        // 设置在线发声音人： 0 普通女声（默认） 1 普通男声  3 情感男声<度逍遥> 4 情感儿童声<度丫丫>
+        mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "0");
+        // 设置合成的音量，0-15 ，默认 5
+        mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_VOLUME, "9");
+        // 设置合成的语速，0-15 ，默认 5
+        mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEED, "5");
+        // 设置合成的语调，0-15 ，默认 5
+        mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5");
+
+        // 6. 初始化
+        // TtsMode.MIX; 离在线融合，在线优先； TtsMode.ONLINE 纯在线； 没有纯离线
+        TtsMode ttsMode = TtsMode.ONLINE;
+        mSpeechSynthesizer.initTts(ttsMode);
+
         try {
             AppConfigManager.getInitedAppConfig().updatePrefer(AppConfigPB.IS_OPENDOOR, false);
         } catch (Exception e) {
