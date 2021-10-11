@@ -327,6 +327,7 @@ public class LoginActivity extends BaseActivity implements IBaseView {
         }
     }
 
+
     @Override
     public void showResult(String status, String pRows, String url) {
         if (status.equals(ExceptionEngine._SUCCESS)) {
