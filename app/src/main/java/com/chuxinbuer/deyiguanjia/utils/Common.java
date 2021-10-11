@@ -122,13 +122,13 @@ public class Common {
      *
      * @return true 存在
      */
-    public static String getVersionCode(Context context) {
-        String version = null;
+    public static int getVersionCode(Context context) {
+        int version = 0;
         try {
             PackageManager packagemanager = context.getPackageManager();
             PackageInfo info = packagemanager.getPackageInfo(
                     context.getPackageName(), 0);
-            version = info.versionName;
+            version = info.versionCode;
         } catch (Exception e) {
         }
         return version;

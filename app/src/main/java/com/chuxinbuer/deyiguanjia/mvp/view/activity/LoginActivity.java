@@ -112,7 +112,7 @@ public class LoginActivity extends BaseActivity implements IBaseView {
         map.put("start", AppConfigManager.getInitedAppConfig().getLast_requesttime());
         new HttpsPresenter(this, this).request(map, Constant.FACELIST, "facelist", false);
 
-        Map<String, String> map2= new HashMap<>();
+        Map<String, String> map2 = new HashMap<>();
 
         map2.put("type", "2");
         map2.put("start", AppConfigManager.getInitedAppConfig().getLast_requesttime_manager());
@@ -333,8 +333,8 @@ public class LoginActivity extends BaseActivity implements IBaseView {
             if (url.equals(Constant.UPDATE_APK)) {
                 if (!Common.empty(pRows)) {
                     JSONObject jsonObject = JSON.parseObject(pRows);
-                    if (jsonObject.containsKey("version")) {
-                        if (!jsonObject.getString("version").equals(Common.getVersionCode(this))) {
+                    if (jsonObject.containsKey("version_code")) {
+                        if (jsonObject.getIntValue("version_code") > Common.getVersionCode(this)) {
                             //一句代码，傻瓜式更新
                             new AppUpdater(LoginActivity.this, jsonObject.getString("package")).setUpdateCallback(new UpdateCallback() {
                                 @Override
