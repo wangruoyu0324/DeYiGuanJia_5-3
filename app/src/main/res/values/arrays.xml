@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="chuyu">
+        <item>厨余1</item>
+        <item>厨余2</item>
+    </string-array>
+
+    <string-array name="other">
+        <item>其他1</item>
+        <item>其他2</item>
+    </string-array>
+
+</resources>
