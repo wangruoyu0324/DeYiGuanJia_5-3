@@ -45,6 +45,7 @@ import cn.bingoogolapple.bgabanner.BGABanner;
 
 public class ChooseRefuseKindActivity_Manager extends BaseActivity implements IBaseView {
 
+
     @BindView(R.id.mBanner)
     BGABanner mBanner;
     @BindView(R.id.mRemainTime)
