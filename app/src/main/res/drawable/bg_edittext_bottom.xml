@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">;
+
+    /*外层*/
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    /*内层*/
+    <item android:bottom="@dimen/dp_5">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <padding
+                android:bottom="@dimen/dp_5" />
+            <corners android:radius="@dimen/dp_0" />
+            /*这个圆角值可以根据需要自己改*/
+            <stroke
+                android:width="@dimen/dp_1"
+                android:color="@color/black_textview2" />
+        </shape>
+    </item>
+</layer-list><!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:shape="rectangle">-->
+
+    <!--    <stroke-->
+    <!--        android:width="@dimen/dp_1"-->
+    <!--        android:color="@color/black_textview2" />-->
+    <!--    <solid android:color="@color/transparent" />-->
+
+    <!--    <corners android:radius="@dimen/dp_0" />-->
+    <!--</shape>-->

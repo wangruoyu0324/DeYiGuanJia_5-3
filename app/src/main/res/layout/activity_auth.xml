@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/actionBarColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_auth_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_30"
+            android:gravity="center"
+            android:text="Activation code / Group authorize server IP:PORT" />
+
+        <EditText
+            android:id="@+id/auth_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <Button
+            android:id="@+id/edit_auth_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/blue"
+            android:text="Online Activation"
+            android:textAllCaps="false"
+            android:textColor="@color/black_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edit_hdfpt_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/blue"
+            android:text="Hardware Fingerprint"
+            android:textAllCaps="false"
+            android:textColor="@color/black_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edit_authoffline_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/blue"
+            android:text="Offline Activation"
+            android:textAllCaps="false"
+            android:textColor="@color/black_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edit_setLocalServer_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/blue"
+            android:text="Set LocalServer(Group Authorize)"
+            android:textAllCaps="false"
+            android:textColor="@color/black_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/back_homepage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/blue"
+            android:text="BACK HOMEPAGE"
+            android:textAllCaps="false"
+            android:textColor="@color/black_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_hdptinfo"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Fingerprint information" />
+
+        <TextView
+            android:id="@+id/tv_showhdpt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:focusable="true"
+            android:longClickable="true"
+            android:maxLines="15"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textColor="#FF0000"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

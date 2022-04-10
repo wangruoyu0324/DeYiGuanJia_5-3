@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <cn.bingoogolapple.bgabanner.BGABanner
+        android:id="@+id/mBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_193"
+        app:banner_indicatorGravity="bottom|left"
+        app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+        app:banner_isNumberIndicator="false"
+        app:banner_pageChangeDuration="500"
+        app:banner_pointAutoPlayAble="false"
+        app:banner_pointAutoPlayInterval="3000"
+        app:banner_pointContainerBackground="@android:color/transparent"
+        app:banner_pointContainerLeftRightPadding="@dimen/dp_18"
+        app:banner_pointDrawable="@drawable/banner_dot"
+        app:banner_pointTopBottomMargin="@dimen/dp_10"
+        app:banner_transitionEffect="accordion" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mBanner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_42"
+        android:text="管理员密码登录"
+        android:textColor="@color/black_textview"
+        android:textSize="@dimen/dp_25_5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mBanner"
+        android:layout_marginTop="@dimen/dp_103"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_43"
+            android:layout_marginRight="@dimen/dp_43"
+            android:layout_marginBottom="@dimen/padding_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_13"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/mCheck_Password"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_13"
+                        android:layout_height="@dimen/dp_13"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:src="@drawable/ic_password" />
+
+                    <EditText
+                        android:id="@+id/et_Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/mCheck_Password"
+                        android:background="@color/transparent"
+                        android:hint="请输入登录密码"
+                        android:imeOptions="actionGo"
+                        android:inputType="textPassword"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:paddingTop="@dimen/dp_14"
+                        android:paddingRight="@dimen/dp_9"
+                        android:paddingBottom="@dimen/dp_14"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColorHint="#999999"
+                        android:textSize="@dimen/dp_14" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mLayout_Check_Password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/dp_15">
+
+                    <ImageView
+                        android:id="@+id/mImage"
+                        android:layout_width="@dimen/dp_17"
+                        android:layout_height="@dimen/dp_17"
+                        android:src="@drawable/selector_password" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/btn_Confirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:layout_marginTop="@dimen/dp_13"
+                android:background="@drawable/shape_button"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_15_5" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/mLayout_Info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/mLayout_Back"
+            android:layout_width="@dimen/dp_85_5"
+            android:layout_height="@dimen/dp_43"
+            android:background="@drawable/bg_back"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_3"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_14" />
+        </LinearLayout>
+
+
+        <com.chuxinbuer.deyiguanjia.widget.CountDownButton
+            android:id="@+id/mRemainTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="倒计时：0S"
+            android:textColor="#057CD3"
+            android:textSize="@dimen/dp_14" />
+    </RelativeLayout>
+</RelativeLayout>
